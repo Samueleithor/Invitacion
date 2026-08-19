@@ -1,0 +1,354 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e2d7cd;
+  font-family:'Times New Roman', Times, serif !important;
+  color: #3d2b1f;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTENEDOR TIPO MÓVIL / TARJETA VERTICAL */
+.invitation-container {
+  width: 100%;
+  max-width: 480px;
+  background-color: #faf5ed;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* TYPOGRAPHY */
+h1, h2, .section-title {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-size: 4rem !important;
+  color: #4a2c1d;
+}
+h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: xx-large !important;
+}
+
+/* 1. HERO SECTION */
+.hero-section {
+  background-color: #faf5ed;
+  padding-bottom: 35px;
+}
+
+.photo-frame {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: inset 0px -51px 12px 0px rgba(226, 215, 205, 0.20);
+border-radius: 0px;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-content {
+  padding: 30px 20px 10px 20px;
+}
+
+.hero-content .title {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.hero-content .subtitle-script {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #8c6a58;
+  margin-bottom: 20px;
+}
+
+.hero-content .name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3b2317;
+  letter-spacing: 0.5px;
+}
+
+.hero-content .surname {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: #6b5246;
+  margin-bottom: 25px;
+}
+
+/* BOTÓN DE MÚSICA */
+.music-button {
+  background: transparent;
+  border: 1px solid #bfa491;
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 0.85rem;
+  color: #5a3d2e;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.music-button:hover, .music-button.playing {
+  background-color: #4a2c1d;
+  color: #ffffff;
+  border-color: #4a2c1d;
+}
+
+/* 2. DARK BANNERS */
+.dark-banner {
+  background-color: #3c1e13;
+  color: #f3e8dd;
+  padding: 35px 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* 3. ITINERARIO */
+.itinerary-section {
+  padding: 40px 25px;
+  background-color: #faf5ed;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.section-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #61483b;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.itinerary-table{
+  width: 100%;
+  font-size: 2rem !important;
+}
+
+.hour{
+  text-align: end;
+  font-size: 1.35rem !important;
+}
+.timeline {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.timeline li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px dashed #d9c8bc;
+  font-size: 0.95rem;
+}
+
+.timeline .time {
+  font-weight: 500;
+  color: #5a3d2e;
+}
+
+.timeline .event {
+  color: #3b2317;
+  font-weight: 600;
+}
+
+.end-event {
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  color: #4a2c1d;
+}
+
+.end-event .event {
+  display: block;
+  margin-top: 4px;
+}
+form{
+  font-family: 'Times New Roman', Times, serif !important;
+}
+form input,
+form select{
+  min-width: 60%;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid #3d2b1f;
+  background-color: #ffffff;
+  padding: .2rem .5rem;
+}
+form button{
+  min-width: 60%;
+  height: 48px;
+  background-color: #3b2317;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+}
+
+/* 4. SECCIONES CON PATRÓN DE FLORES DE FONDO (Locaciones y Código de Vestimenta) */
+.pattern-section {
+  position: relative;
+  background-image: url('patron-flores.png'); /* Ruta de tu patrón de flores */
+  background-size: cover;
+  background-position: center;
+  color: #3b2317;
+  padding: 45px 25px;
+  overflow: hidden;
+}
+
+/* Capa semitransparente color rosa/crema tenue sobre el patrón oscuro */
+.pattern-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(243, 222, 218, 0.88);
+  z-index: 1;
+}
+
+.pattern-section .section-content {
+  position: relative;
+  z-index: 2;
+}
+
+.location-item {
+  margin-bottom: 25px;
+}
+
+.location-item h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.location-item .location-name {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #503628;
+}
+
+.map-link {
+  color: #2b5480;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+
+/* 5. MESA DE REGALOS */
+.gift-section {
+  padding: 40px 25px;
+  background-color: #faf5ed;
+}
+
+.gift-section p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: #503628;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.highlight-link a {
+  color: #385d8a;
+  text-decoration: underline;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* 6. CÓDIGO DE VESTIMENTA */
+.dresscode-section p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.color-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffffff;
+}
+
+.dresscode-section .note {
+  font-size: 0.88rem;
+  color: #4a2c1d;
+}
+
+.dresscode-section .note strong {
+  color: #d97724;
+}
+
+/* 7. HUECO PARA EL FORMULARIO */
+.form-placeholder-section {
+  padding: 40px 25px;
+  background-color: #faf5ed;
+}
+
+.form-placeholder-section p {
+  font-size: 0.95rem;
+  color: #5a3d2e;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.placeholder-box {
+  border: 2px dashed #c0a897;
+  background-color: #f3ece4;
+  padding: 40px 20px;
+  border-radius: 8px;
+  color: #8c6a58;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* 8. CIERRE */
+.closing-section {
+  padding: 45px 25px 50px 25px;
+  background-color: #faf5ed;
+}
+
+.thank-you-title {
+  font-family: "Fleur De Leah", cursive !important;  
+  font-size: 2.3rem !important;
+  color: #d9822b;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.thank-you-title strong {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+}
+
+.star-icon {
+  font-size: 2rem;
+  color: #d9822b;
+}
