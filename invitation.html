@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV Años - Ashley</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons (para el reproductor y ubicación) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="invitation-container">
+
+    <!-- 1. HERO / FOTO DE PORTADA -->
+    <header class="hero-section">
+      <div class="photo-frame">
+        <img src="sources/img/quinceanera.webp" alt="Ashley XV Años" class="hero-img">
+      </div>
+      
+      <div class="hero-content">
+        <h1 class="title">Mis XV años</h1>
+        <p class="subtitle-script">19 de septiembre del 2026</p>
+        
+        <h2 class="name">Ashley Gisselle</h2>
+        <p class="surname">Mancilla Arroyo</p>
+        
+        <!-- Botón Reproductor de Audio -->
+        <button id="music-btn" class="music-button" aria-label="Reproducir música">
+          <i class="fa-solid fa-play" id="music-icon"></i>
+          <span>Lana Del Rey - Say Yes to Heaven</span>
+        </button>
+        <audio id="bg-music" src="cancion.m4a" loop></audio>
+      </div>
+    </header>
+
+    <!-- 2. BANNER MENSAJE DESTACADO -->
+    <section class="dark-banner">
+      <p>Hay momentos en la vida que merecen guardarse para siempre.<br><b>Sé parte del mío</b></p>
+    </section>
+
+
+    <!-- 3. LOCACIONES (CON PATRÓN DE FLORES DE FONDO) -->
+    <section class="pattern-section locations-section">
+      <div class="pattern-overlay"></div>
+      <div class="section-content">
+        <h2 class="section-title">Locaciones</h2>
+        
+        <div class="location-item">
+          <h3>Iglesia</h3>
+          <p class="location-name">Parroquia del Señor del Perdón</p>
+          <a href="https://maps.app.goo.gl/ff7xF3RhzVZyegks8" target="_blank" rel="noopener" class="map-link">Ver ubicación en Google Maps</a>
+        </div>
+
+        <div class="location-item">
+          <h3>Salón</h3>
+          <p class="location-name">Salón Dianney</p>
+          <a href="https://maps.app.goo.gl/j4N5NEKTprvz3MhU9" target="_blank" rel="noopener" class="map-link">Ver ubicación en Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. ITINERARIO -->
+    <section class="itinerary-section">
+      <h2 class="section-title">Itinerario</h2>
+      <p class="section-intro">Para que compartas con nosotros los momentos más importantes de esta hermosa noche, te compartimos el programa de la fiesta:</p>
+      
+      <div class="itinerary-table">
+        <i class="fa-solid fa-church"></i>
+          <p>Iglesia</p>
+          <p><span class="hour">06:00 PM</span></p>
+        <i class="fa-solid fa-bell-concierge"></i>
+          <p>Recepción<br><span class="hour">07:30 PM</span></p>
+      </div>
+
+      <!--
+      <ul class="timeline">
+        <i class="fa-solid fa-church"></i>
+        <li><span class="time">06:00 PM a 07:00 PM</span> <span class="event">Iglesia / Ceremonia</span></li>
+        
+        <i class="fa-solid fa-bell-concierge"></i>
+        <li><span class="time">07:30 PM a 08:00 PM</span> <span class="event">Recepción</span></li>
+        
+        <i class="fa-solid fa-cheese"></i>
+        <li><span class="time">08:00 PM a 09:00 PM</span> <span class="event">Comida</span></li>
+        
+        <i class="fa-solid fa-crown"></i>
+        <li><span class="time">09:00 PM a 10:00 PM</span> <span class="event">Vals</span></li>
+        
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <li><span class="time">10:00 PM a 11:00 PM</span> <span class="event">Fiesta</span></li>
+        
+        <i class="fa-solid fa-music"></i>
+        <li><span class="time">11:00 PM a 01:00 AM</span> <span class="event">Batucada</span></li>
+      </ul>
+      -->
+      <br>
+      <div class="end-event">
+        <span class="time">01:00 AM</span>
+        <span class="event">Fin del evento</span>
+      </div>
+    </section>
+
+
+
+
+    <!-- 5. CÓDIGO DE VESTIMENTA (CON PATRÓN DE FLORES DE FONDO) -->
+    <section class="pattern-section dresscode-section">
+      <div class="pattern-overlay"></div>
+      <div class="section-content">
+        <h2 class="section-title">Código de vestimenta</h2>
+        <p>Les sugerimos un vestuario formal. Traje elegante para los hombres y vestido elegante para las mujeres.</p>
+        
+        <div class="color-palette">
+          <span class="color-circle" style="background-color: #E27D60;"></span>
+          <span class="color-circle" style="background-color: #85DCBA;"></span>
+          <span class="color-circle" style="background-color: #242582;"></span>
+          <span class="color-circle" style="background-color: #E8A87C;"></span>
+        </div>
+        <br>
+        <p class="note">Hemos reservado el color dorado <strong>dorado</strong> para la quinceañera.</p>
+      </div>
+    </section>
+
+    <!-- 6. HUECO PARA EL FORMULARIO DE CONFIRMACIÓN -->
+    <section class="form-placeholder-section">
+      <h2 class="section-title">Confirmación de asistencia</h2>
+      <p>Nos encantaría contar con tu presencia. Por favor, confirma tu asistencia enviando este formulario lo antes posible.</p>
+      
+      <!-- HUECO PARA EL FORMULARIO INTEGRADO (AQUÍ PUEDES INSERTAR TU FORMULARIO EN EL FUTURO) -->
+      <div class="form-container-slot">
+        <!-- =============== INICIO ESPACIO FORMULARIO =============== -->
+        <form onsubmit="guardar(event)">
+          <label>Familia:</label><br>
+          <input type="text" id="familia" required><br><br>
+
+          <label>¿Asistirás al evento?</label><br>
+          <select id="asistencia" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Si, ahí estaré">Sí, ahí estaré</option>
+              <option value="No, no podré asistir">No, no podré asistir</option>
+          </select><br><br>
+
+          <button type="submit">Enviar respuesta</button>
+      </form>
+        <!-- =============== FIN ESPACIO FORMULARIO =============== -->
+      </div>
+    </section>
+
+    <!-- 7. BANNER FRASE DE AGRADECIMIENTO -->
+    <section class="dark-banner">
+      <p><b>¡Gracias por acompañarnos a celebrar este gran día!</b></p>
+    </section>
+
+    <!-- 8. CIERRE / CORAZÓN/ESTRELLA -->
+    <footer class="closing-section">
+      <p class="thank-you-title">Con gratitud y cariño,<br><strong>Ashley.</strong></p>
+      <div class="star-icon">
+        <i class="fa-solid fa-sun"></i>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Lógica simple en JS para el reproductor de audio -->
+  <script>
+    const musicBtn = document.getElementById('music-btn');
+    const audio = document.getElementById('bg-music');
+    const musicIcon = document.getElementById('music-icon');
+
+    musicBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        musicIcon.classList.remove('fa-play');
+        musicIcon.classList.add('fa-pause');
+        musicBtn.classList.add('playing');
+      } else {
+        audio.pause();
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-play');
+        musicBtn.classList.remove('playing');
+      }
+    });
+  </script>
+</body>
+</html>
