@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis XV Años - Ashley</title>
-  
+  <link rel="shortcut icon" type="image/x-icon" href="sources/img/flor.webp">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +44,17 @@
 
     <!-- 2. BANNER MENSAJE DESTACADO -->
     <section class="dark-banner">
-      <p>Hay momentos en la vida que merecen guardarse para siempre.<br><b>Sé parte del mío</b></p>
+      <p>
+        Hay momentos en la vida que son inolvidables.<br><b>Compartirlos con quienes amamos los hace eternos.</b>
+      </p>
+    </section>
+    <section class="itinerary-section">
+      <p>
+        <span class="normal-text"><strong>Con la bendición de Dios, mis padrinos y mis padres:</strong><br>
+        Isabel Teresa Arroyo Contreras <br>y<br> Antonio Mancilla Bermúdez<br><br></span>
+
+        <span class="bigger-text"><b>Tengo el agrado de invitarlos a la celebración de mis XV años </b></span>
+      </p>
     </section>
 
 
@@ -77,11 +88,13 @@
         <i class="fa-solid fa-church"></i>
           <p>Iglesia</p>
           <p><span class="hour">06:00 PM</span></p>
+          <br>
         <i class="fa-solid fa-bell-concierge"></i>
           <p>Recepción<br><span class="hour">07:30 PM</span></p>
       </div>
 
       <br>
+      <hr>
       <div class="end-event">
         <span class="time">03:00 AM</span>
         <span class="event">Fin del evento</span>
@@ -105,32 +118,41 @@
           <span class="color-circle" style="background-color: #E8A87C;"></span>
         </div>
         <br>
+        <p class="note">Si necesitas ideas para tu vestuario, hemos creado un tablero de Pinterest, solo <a href="https://pin.it/2T5m2KRwh" target="_blank">da clic aquí para verlo</a>.</p>
         <p class="note">Hemos reservado el color dorado <strong>dorado</strong> para la quinceañera.</p>
       </div>
     </section>
 
-    <!-- 6. HUECO PARA EL FORMULARIO DE CONFIRMACIÓN -->
+        <!-- 6. FORMULARIO DE CONFIRMACIÓN -->
     <section class="form-placeholder-section">
       <h2 class="section-title">Confirmación de asistencia</h2>
-      <p>Nos encantaría contar con tu presencia. Por favor, confirma tu asistencia enviando este formulario lo antes posible.</p>
       
-      <!-- HUECO PARA EL FORMULARIO INTEGRADO (AQUÍ PUEDES INSERTAR TU FORMULARIO EN EL FUTURO) -->
-      <div class="form-container-slot">
-        <!-- =============== INICIO ESPACIO FORMULARIO =============== -->
-        <form onsubmit="guardar(event)">
-          <label>Familia:</label><br>
-          <input type="text" id="familia" placeholder="Ejemplo: Mancilla Arroyo" required><br><br>
+      <div id="form-block">
+        <p>Nos encantaría contar con tu presencia. Por favor, confirma tu asistencia enviando este formulario lo antes posible.</p>
+        
+        <div class="form-container-slot">
+          <!-- Formulario con la función corregida -->
+          <form onsubmit="guardar(event)">
+            <label for="familia">Familia:</label><br>
+            <input type="text" id="familia" placeholder="Ejemplo: Mancilla Arroyo" required><br><br>
 
-          <label>¿Asistirás al evento?</label><br>
-          <select id="asistencia" required>
-              <option value="">Selecciona una opción</option>
-              <option value="Si, ahí estaré">Sí, ahí estaré</option>
-              <option value="No, no podré asistir">No, no podré asistir</option>
-          </select><br><br>
+            <label for="asistencia">¿Asistirás al evento?</label><br>
+            <select id="asistencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Si, ahí estaré">Sí, ahí estaré</option>
+                <option value="No, no podré asistir">No, no podré asistir</option>
+            </select><br><br>
 
-          <button type="submit">Enviar respuesta</button>
-      </form>
-        <!-- =============== FIN ESPACIO FORMULARIO =============== -->
+            <button type="submit">Enviar respuesta</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Mensaje de éxito oculto por defecto -->
+      <div id="success-message" style="display: none; text-align: center; padding: 20px;">
+        <i class="fa-solid fa-circle-check" style="color: #29795a; font-size: 3rem; margin-bottom: 15px;"></i>
+        <h3>¡Muchas gracias!</h3>
+        <p>Hemos recibido tu respuesta. No necesitas hacer nada más, nosotros nos encargamos</p>
       </div>
     </section>
 
@@ -149,15 +171,15 @@
 
   </main>
 
-  <!-- Lógica simple en JS para el reproductor de audio -->
   <script>
+    // Lógica del reproductor de audio
     const musicBtn = document.getElementById('music-btn');
     const audio = document.getElementById('bg-music');
     const musicIcon = document.getElementById('music-icon');
 
     musicBtn.addEventListener('click', () => {
       if (audio.paused) {
-        audio.play();
+        audio.play().catch(err => console.log("Interacción requerida primero"));
         musicIcon.classList.remove('fa-play');
         musicIcon.classList.add('fa-pause');
         musicBtn.classList.add('playing');
@@ -168,6 +190,21 @@
         musicBtn.classList.remove('playing');
       }
     });
+
+    // Función para manejar el envío del formulario
+    function guardar(event) {
+      event.preventDefault(); // Evita que la página se recargue
+      
+      const familia = document.getElementById('familia').value;
+      const asistencia = document.getElementById('asistencia').value;
+
+      // Aquí puedes añadir tu lógica para mandar los datos a Google Sheets, Firebase, etc.
+      console.log("Datos capturados:", { familia, asistencia });
+
+      // Transición estética: Oculta el formulario y muestra la confirmación
+      document.getElementById('form-block').style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+    }
   </script>
 </body>
 </html>
