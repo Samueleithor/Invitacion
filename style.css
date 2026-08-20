@@ -114,10 +114,12 @@ border-radius: 0px;
   color: #f3e8dd;
   padding: 35px 25px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   line-height: 1.5;
 }
-
+.bigger-text{
+  font-size: 1.5rem !important;
+}
 /* 3. ITINERARIO */
 .itinerary-section {
   padding: 40px 25px;
@@ -178,7 +180,9 @@ border-radius: 0px;
   font-size: 0.9rem;
   color: #4a2c1d;
 }
-
+.normal-text{
+  font-size: 1rem !important;
+}
 .end-event .event {
   display: block;
   margin-top: 4px;
@@ -190,7 +194,7 @@ form input,
 form select{
   min-width: 60%;
   height: 36px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #3d2b1f;
   background-color: #ffffff;
   padding: .2rem .5rem;
@@ -201,21 +205,21 @@ form button{
   background-color: #3b2317;
   color: #ffffff;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 8px;
   border: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.2rem;
 }
 
 /* 4. SECCIONES CON PATRÓN DE FLORES DE FONDO (Locaciones y Código de Vestimenta) */
-.pattern-section {
-  position: relative;
-  background-image: url('flores.webp'); 
-  background-size: cover;
-  background-position: center;
-  color: #3b2317;
-  padding: 45px 25px;
-  overflow: hidden;
+.pattern-section { 
+  position: relative; 
+  background-image: url('sources/img/flores.webp'); 
+  background-size: cover; 
+  background-position: center; 
+  color: #3b2317; 
+  padding: 45px 25px; 
+  overflow: hidden; 
 }
 
 /* Capa semitransparente color rosa/crema tenue sobre el patrón oscuro */
