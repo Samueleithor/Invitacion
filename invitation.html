@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome Icons (para el reproductor y ubicación) -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
@@ -30,16 +30,20 @@
         <h1 class="title">Mis XV años</h1>
         <p class="subtitle-script">19 de septiembre del 2026</p>
         
-        <h2 class="name">Ashley Gisselle</h2>
+        <h2 class="name">Ashley Giselle</h2>
         <p class="surname">Mancilla Arroyo</p>
         
         <!-- Botón Reproductor de Audio -->
-        <button id="music-btn" class="music-button" aria-label="Reproducir música">
-          <i class="fa-solid fa-play" id="music-icon"></i>
-          <span>Lana Del Rey - Say Yes to Heaven</span>
-        </button>
-        <audio id="bg-music" src="cancion.m4a" loop></audio>
-      </div>
+        <div class="music-btn-container">
+            <button id="music-btn" class="music-button" aria-label="Reproducir música">
+            <i class="fa-solid fa-play" id="music-icon"></i>
+            <div class="marquee-container">
+                <span id="music-text">Reproducir música</span>
+            </div>
+            </button>
+            <audio id="bg-music" src="cancion.m4a" loop></audio>
+        </div>
+    </div>
     </header>
 
     <!-- 2. BANNER MENSAJE DESTACADO -->
@@ -50,15 +54,17 @@
     </section>
     <section class="itinerary-section">
       <p>
-        <span class="normal-text"><strong>Con la bendición de Dios, mis padrinos y mis padres:</strong><br>
-        Isabel Teresa Arroyo Contreras <br>y<br> Antonio Mancilla Bermúdez<br><br></span>
+        <span class="normal-text"><strong>Con la bendición de Dios, mis padres:</strong><br>
+            Teresa Isabel Arroyo Contreras <br>&<br> Antonio Mancilla Bermúdez<br><br>
+            <br><strong>Y mis padrinos:</strong><br>
+            Isabel Mancilla Bermúdez <br>Ingrid Maribel Escobar Quiróz<br> Kervy Daniel Ramos Mondragón<br>Samuel Mancilla Bermúdez<br><br>
+        </span>
 
         <span class="bigger-text"><b>Tengo el agrado de invitarlos a la celebración de mis XV años </b></span>
       </p>
     </section>
 
-
-    <!-- 3. LOCACIONES (CON PATRÓN DE FLORES DE FONDO) -->
+    <!-- 3. LOCACIONES -->
     <section class="pattern-section locations-section">
       <div class="pattern-overlay"></div>
       <div class="section-content">
@@ -77,7 +83,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- 4. ITINERARIO -->
     <section class="itinerary-section">
@@ -101,10 +106,7 @@
       </div>
     </section>
 
-
-
-
-    <!-- 5. CÓDIGO DE VESTIMENTA (CON PATRÓN DE FLORES DE FONDO) -->
+    <!-- 5. CÓDIGO DE VESTIMENTA -->
     <section class="pattern-section dresscode-section">
       <div class="pattern-overlay"></div>
       <div class="section-content">
@@ -112,22 +114,19 @@
         <p>Les sugerimos un vestuario formal. Traje elegante para los hombres y vestido elegante para las mujeres.</p>
         
         <div class="color-palette">
-          
           <span class="color-circle" style="background-color: #9bccfa;"></span>
           <span class="color-circle" style="background-color: #b084e8;"></span>
           <span class="color-circle" style="background-color: #e048ae;"></span>
           <span class="color-circle" style="background-color: #7a4638;"></span>
           <span class="color-circle" style="background-color: #03010a;"></span>
-          
-          
         </div>
         <br>
         <p class="note">Si necesitas ideas para tu vestuario, hemos creado un tablero de Pinterest, solo <a href="https://pin.it/2T5m2KRwh" target="_blank">da clic aquí para verlo</a>.</p>
-        <p class="note">Hemos reservado el color dorado <strong>dorado</strong> para la quinceañera.</p>
+        <p class="note">Hemos reservado el color <strong>dorado</strong> para la quinceañera.</p>
       </div>
     </section>
 
-        <!-- 6. FORMULARIO DE CONFIRMACIÓN -->
+    <!-- 6. FORMULARIO DE CONFIRMACIÓN -->
     <section class="form-placeholder-section">
       <h2 class="section-title">Confirmación de asistencia</h2>
       
@@ -135,7 +134,6 @@
         <p>Nos encantaría contar con tu presencia. Por favor, confirma tu asistencia enviando este formulario lo antes posible.</p>
         
         <div class="form-container-slot">
-          <!-- Formulario con la función corregida -->
           <form onsubmit="guardar(event)">
             <label for="familia">Familia:</label><br>
             <input type="text" id="familia" placeholder="Ejemplo: Mancilla Arroyo" required><br><br>
@@ -146,6 +144,9 @@
                 <option value="Si, ahí estaré">Sí, ahí estaré</option>
                 <option value="No, no podré asistir">No, no podré asistir</option>
             </select><br><br>
+
+            <label for="telefono" id="label-telefono">Teléfono (10 dígitos):</label><br>
+            <input type="tel" id="telefono" placeholder="5512345678" pattern="[0-9]{10}" required><br><br>
 
             <button type="submit">Enviar respuesta</button>
           </form>
@@ -165,7 +166,7 @@
       <p><b>¡Gracias por acompañarnos a celebrar este gran día!</b></p>
     </section>
 
-    <!-- 8. CIERRE / CORAZÓN/ESTRELLA -->
+    <!-- 8. CIERRE -->
     <footer class="closing-section">
       <p class="thank-you-title">Con gratitud y cariño,<br><strong>Ashley.</strong></p>
       <div class="star-icon">
@@ -176,38 +177,111 @@
   </main>
 
   <script>
-    // Lógica del reproductor de audio
+    // Reproductor de música
     const musicBtn = document.getElementById('music-btn');
     const audio = document.getElementById('bg-music');
     const musicIcon = document.getElementById('music-icon');
+    const musicText = document.getElementById('music-text');
 
     musicBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play().catch(err => console.log("Interacción requerida primero"));
-        musicIcon.classList.remove('fa-play');
-        musicIcon.classList.add('fa-pause');
-        musicBtn.classList.add('playing');
+        if (audio.paused) {
+          audio.play().catch(err => console.log("Interacción requerida primero"));
+          musicIcon.classList.remove('fa-play');
+          musicIcon.classList.add('fa-pause');
+          musicBtn.classList.add('playing');
+          musicText.textContent = "Reproduciendo Dancing Queen - ABBA";
+        } else {
+          audio.pause();
+          musicIcon.classList.remove('fa-pause');
+          musicIcon.classList.add('fa-play');
+          musicBtn.classList.remove('playing');
+          musicText.textContent = "Reproducir música";
+        }
+    });
+
+    // Control dinámico del campo de teléfono
+    const selectAsistencia = document.getElementById('asistencia');
+    const inputTelefono = document.getElementById('telefono');
+    const labelTelefono = document.getElementById('label-telefono');
+
+    selectAsistencia.addEventListener('change', () => {
+      if (selectAsistencia.value === "No, no podré asistir") {
+        labelTelefono.textContent = "Teléfono (Opcional):";
+        inputTelefono.removeAttribute('required');
+        inputTelefono.removeAttribute('pattern');
       } else {
-        audio.pause();
-        musicIcon.classList.remove('fa-pause');
-        musicIcon.classList.add('fa-play');
-        musicBtn.classList.remove('playing');
+        labelTelefono.textContent = "Teléfono (10 dígitos):";
+        inputTelefono.setAttribute('required', 'required');
+        inputTelefono.setAttribute('pattern', '[0-9]{10}');
       }
     });
 
-    // Función para manejar el envío del formulario
-    function guardar(event) {
-      event.preventDefault(); // Evita que la página se recargue
-      
-      const familia = document.getElementById('familia').value;
-      const asistencia = document.getElementById('asistencia').value;
+    // Función de envío del formulario
+    async function guardar(event) {
+        event.preventDefault();
 
-      // Aquí puedes añadir tu lógica para mandar los datos a Google Sheets, Firebase, etc.
-      console.log("Datos capturados:", { familia, asistencia });
+        const inputFamilia = document.getElementById('familia');
+        const submitBtn = event.target.querySelector('button[type="submit"]');
 
-      // Transición estética: Oculta el formulario y muestra la confirmación
-      document.getElementById('form-block').style.display = 'none';
-      document.getElementById('success-message').style.display = 'block';
+        const familiaVal = inputFamilia.value.trim();
+        const asistenciaVal = selectAsistencia.value;
+        let telefonoVal = inputTelefono.value.trim();
+
+        // 1. Validar nombre de familia
+        if (!familiaVal) {
+            alert("Por favor, ingresa el nombre de tu familia.");
+            inputFamilia.focus();
+            return;
+        }
+
+        // 2. Procesar y validar número telefónico según asistencia
+        if (asistenciaVal === "No, no podré asistir") {
+            if (telefonoVal === "") {
+                telefonoVal = "Sin teléfono provisto";
+            } else if (!/^\d{10}$/.test(telefonoVal)) {
+                alert("Si ingresas un teléfono, debe ser de 10 dígitos.");
+                inputTelefono.focus();
+                return;
+            }
+        } else {
+            if (!/^\d{10}$/.test(telefonoVal)) {
+                alert("Por favor, ingresa un número de teléfono válido a 10 dígitos.");
+                inputTelefono.focus();
+                return;
+            }
+        }
+
+        // Bloquear botón durante la petición
+        submitBtn.disabled = true;
+        const textoOriginal = submitBtn.textContent;
+        submitBtn.textContent = "Enviando...";
+
+        const data = {
+            familia: familiaVal,
+            telefono: telefonoVal,
+            asistencia: asistenciaVal
+        };
+
+        try {
+            await fetch("https://tecnoimplantanfr.kissflow.com/integration/2/Ac9ZvfZ_UUJd/webhook/VT7yWaWftW6QLYh52xnqxLCbtKb7c5DIpulTJT8FVUh5WomULnbyIAymmUTFWB3lzfqD71IVt2N9XrSR7T3sw", {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                  "Content-Type": "text/plain"
+              },
+              body: JSON.stringify(data)
+            });
+
+            document.getElementById('form-block').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+
+        } catch (error) {
+            console.error("Error enviando el formulario:", error);
+            alert("Hubo un error al enviar tu respuesta. Por favor, intenta de nuevo.");
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = textoOriginal;
+        }
     }
   </script>
 </body>
