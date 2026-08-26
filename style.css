@@ -1,4 +1,3 @@
-/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +44,7 @@ h2{
   width: 100%;
   overflow: hidden;
   box-shadow: inset 0px -51px 12px 0px rgba(226, 215, 205, 0.20);
-border-radius: 0px;
+  border-radius: 0px;
 }
 
 .hero-img {
@@ -56,6 +55,8 @@ border-radius: 0px;
 
 .hero-content {
   padding: 30px 20px 10px 20px;
+  display: grid;
+  justify-items: center;
 }
 
 .hero-content .title {
@@ -86,9 +87,21 @@ border-radius: 0px;
   margin-bottom: 25px;
 }
 
-/* BOTÓN DE MÚSICA */
+/* BOTÓN DE MÚSICA, LATIDO Y EFECTO MARQUESINA (.playing) */
+.music-btn-container {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 10px 0 20px;
+  background-image: linear-gradient(to top, #5a3d2e, #00000000);
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
 .music-button {
-  background: transparent;
+  background: #f3e8dd;
   border: 1px solid #bfa491;
   border-radius: 30px;
   padding: 10px 22px;
@@ -96,16 +109,69 @@ border-radius: 0px;
   font-size: 0.85rem;
   color: #5a3d2e;
   cursor: pointer;
+  height: 48px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.music-button:hover, .music-button.playing {
+.music-button:hover {
   background-color: #4a2c1d;
   color: #ffffff;
   border-color: #4a2c1d;
+}
+
+/* Animación de latido */
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 44, 29, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(74, 44, 29, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 44, 29, 0);
+  }
+}
+
+/* Contenedor de la marquesina */
+.marquee-container {
+  overflow: hidden;
+  width: fit-content;
+  max-width: 130px;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Animación de desplazamiento hacia la izquierda */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.music-button.playing {
+  background-color: #4a2c1d;
+  color: #ffffff;
+  border-color: #4a2c1d;
+  animation: pulse-animation 1.5s infinite ease-in-out;
+}
+
+.music-button.playing .marquee-container span {
+  display: inline-block;
+  animation: marquee-scroll 9s linear infinite;
+  padding-left: 5px;
 }
 
 /* 2. DARK BANNERS */
@@ -120,6 +186,7 @@ border-radius: 0px;
 .bigger-text{
   font-size: 1.5rem !important;
 }
+
 /* 3. ITINERARIO */
 .itinerary-section {
   padding: 40px 25px;
