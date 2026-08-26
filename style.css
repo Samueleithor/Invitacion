@@ -418,7 +418,12 @@ form button{
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.8rem;
 }
-
+.thank-you-section{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  color: #805d4b;
+  line-height: 1.5;
+}
 .star-icon {
   font-size: 2rem;
   color: #d9822b;
